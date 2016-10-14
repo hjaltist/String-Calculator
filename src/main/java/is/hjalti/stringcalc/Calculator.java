@@ -5,8 +5,8 @@ public class Calculator {
     public static int add(String number) {
         if (number.isEmpty()) return 0;
 
-        if (number.contains(",")) {
-            String[] numbers = number.split(",");
+        if (number.contains(",") || number.contains("\n")) {
+            String[] numbers = number.split(",|\n");
             int[] parsedNumbers = new int [numbers.length];
             
             for (int i = 0; i < numbers.length; i++) {
