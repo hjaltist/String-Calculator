@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    public static int add(String number) {
+    public static int add(final String number) {
         if (number.isEmpty()) return 0;
 
         if (number.contains(",") || number.contains("\n")) {
@@ -14,9 +14,11 @@ public class Calculator {
 
             for (int i = 0; i < numbers.length; i++) {
                 parsedNumbers[i] = Integer.parseInt(numbers[i]);
+                
                 if (parsedNumbers[i] < 0) {
                     negativeNumbers.add(parsedNumbers[i]);
                 }
+
             }
 
             int sum = 0;
