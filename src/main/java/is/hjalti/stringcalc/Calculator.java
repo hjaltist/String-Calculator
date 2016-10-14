@@ -19,6 +19,10 @@ public class Calculator {
                     negativeNumbers.add(parsedNumbers[i]);
                 }
 
+                if (parsedNumbers[i] > 1000) {
+                    parsedNumbers[i] = 0;
+                }
+
             }
 
             int sum = 0;

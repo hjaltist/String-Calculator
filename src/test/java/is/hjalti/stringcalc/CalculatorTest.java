@@ -35,6 +35,11 @@ public class CalculatorTest {
         Calculator.add("20,-1,5\n9");
     }
 
-    
+    @Test
+    public void testGreaterThanThousand() {
+        assertEquals(2, Calculator.add("1001,2"));
+        assertEquals(15, Calculator.add("1001,2,2999,10,3"));
+        assertEquals(18, Calculator.add("1021,9,999999999,5,4"));
+    }
 
 }
