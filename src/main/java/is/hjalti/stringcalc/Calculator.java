@@ -5,10 +5,23 @@ import java.util.ArrayList;
 public class Calculator {
 
     public static int add(final String number) {
+        String delimeter = ",|\n";
+
+        if (number.startsWith("//")) {
+            delimeter = number.substring(2, number.indexOf("\n"));
+            String snippedNumber = number.substring(number.indexOf("\n") + 1);
+
+            return add(snippedNumber, delimeter);
+        }
+
+        return add(number, delimeter);
+    }
+
+    public static int add(final String number, final String delimeter) {
         if (number.isEmpty()) return 0;
 
-        if (number.contains(",") || number.contains("\n")) {
-            String[] numbers = number.split(",|\n");
+        if (number.contains(",") || number.contains("\n") || number.contains(delimeter)) {
+            String[] numbers = number.split(delimeter);
             int[] parsedNumbers = new int [numbers.length];
             ArrayList<Integer> negativeNumbers = new ArrayList<Integer>();
 

@@ -42,4 +42,10 @@ public class CalculatorTest {
         assertEquals(18, Calculator.add("1021,9,999999999,5,4"));
     }
 
+    @Test
+    public void testCustomDelimeter() {
+        assertEquals(2, Calculator.add("//;\n1;1"));
+        assertEquals(5, Calculator.add("//%\n2%2%1"));
+    }
+
 }
