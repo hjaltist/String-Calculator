@@ -29,4 +29,10 @@ public class CalculatorTest {
         assertEquals(15, Calculator.add("5\n5,5"));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testNegativeNumbers() {
+        Calculator.add("11,-1");
+        Calculator.add("20,-1,5\n9");
+    }
+
 }
